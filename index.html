@@ -69,6 +69,11 @@
                 view: view
             });
 
+            const searchExpand= new Expand({
+                view: view,
+            content: searchWidget
+            })
+
             // Create featurelayer from feature service 
             const layer = new FeatureLayer({ 
                 url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/survey123_f05bd2b4b2fb4a619cc49088c9948dbb_results/FeatureServer" //URL to survey 123 results layer 
@@ -82,7 +87,7 @@
             });
 
             //adds search widget
-            view.ui.add(searchWidget, {
+            view.ui.add(searchExpand, {
                 position: "top-left", 
                 index: 0
             });
